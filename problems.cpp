@@ -43,4 +43,22 @@ class Solution {
     }
 };
 
-// Q3 
+// Q3 // Given an array arr[], swap the kth element from the beginning with the kth element from the end.
+
+// Note: 1-based indexing is followed.
+
+
+class Solution {
+  public:
+    void swapKth(vector<int> &arr, int k) {
+        // code here
+        int n = arr.size();
+        int beg = k - 1;
+        int end = n - k;
+        
+        swap(arr[beg],arr[end]);
+        
+
+    }
+};
+
