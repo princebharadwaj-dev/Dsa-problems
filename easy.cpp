@@ -56,3 +56,23 @@ class Solution {
         return secLargest;
     }
 };
+
+// Q3 Given a sorted array arr[] and a number target, find the number of occurrences of target in given array. 
+
+class Solution {
+  public:
+    int countFreq(vector<int>& arr, int target) {
+        // code here
+        int n = arr.size();
+        int count = 0;
+        
+        for(int i = 0; i < n; i++){
+            if(arr[i] == target) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+};
+
