@@ -62,3 +62,44 @@ class Solution {
     }
 };
 
+// Q4 // Given an array arr of distinct elements, the task is to return an array of elements that have at least two greater elements.
+
+// Examples:
+
+// Input: arr[] = [2, 8, 7, 1, 5]
+// Output: [1, 2, 5] 
+
+class Solution {
+  public:
+    vector<int> findElements(vector<int> &arr) {
+
+        int n = arr.size();
+        int largest = INT_MIN;
+        int secLargest = INT_MIN;
+
+        for(int i = 0; i < n; i++) {
+            if(arr[i] > largest) {
+                secLargest = largest;
+                largest = arr[i];
+            }
+            else if(arr[i] > secLargest && arr[i] != largest) {
+                secLargest = arr[i];
+            }
+        }
+
+        vector<int> ans;
+
+        for(int i = 0; i < n; i++) {
+            if(arr[i] < secLargest) {
+                ans.push_back(arr[i]);
+            }
+        }
+
+        sort(ans.begin(), ans.end());
+
+        return ans;
+    }
+};
+
+
+
