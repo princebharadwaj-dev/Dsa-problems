@@ -54,4 +54,33 @@ class Solution {
     }
 };
 
-// Q3.
+// Q3.Find Square root
+
+class Solution {
+  public:
+    int floorSqrt(int n) {
+        // code here
+        if(n < 2) {
+            return 1;
+        }
+        
+        int start = 0;
+        int end = n;
+        int ans = -1;
+        
+        while(start <= end) {
+            int mid = start + (end - start) / 2;
+            
+            if(mid == n / mid) {
+                return mid;
+            } else if(mid < n / mid) {
+                ans = mid;
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        
+        return ans;
+    }
+};
