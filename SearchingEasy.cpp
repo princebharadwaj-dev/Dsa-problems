@@ -174,3 +174,34 @@ class Solution {
         return arr[start];
     }
 };
+
+// Q7 You have given two sorted arrays a[] & b[] of distinct elements. The first array has one element extra added in between. Return the index of the extra element.
+
+// Note: 0-based indexing is followed.
+
+// Examples
+
+// Input: a[] = [2,4,6,8,9,10,12], b[] = [2,4,6,8,10,12]
+// Output: 4
+// Explanation: In the first array, 9 is extra added and it's index is 4.
+
+class Solution {
+  public:
+    int findExtra(vector<int>& a, vector<int>& b) {
+        // code here
+        int start = 0;
+        int end = b.size() - 1;
+        
+        while(start <= end) {
+            int mid = start + (end - start) / 2;
+            
+            if(a[mid] == b[mid]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        
+        return start;
+    }
+};
