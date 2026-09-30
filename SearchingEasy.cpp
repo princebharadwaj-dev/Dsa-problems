@@ -84,3 +84,28 @@ class Solution {
         return ans;
     }
 };
+
+// Q4 Find how many time arr is rotated;
+// Input: arr[] = [5, 1, 2, 3, 4]
+//Output: 1
+//Explanation: The given array is [5, 1, 2, 3, 4]. The original sorted array is [1, 2, 3, 4, 5]. We can see that the array was rotated 1 times to the right.
+
+class Solution {
+  public:
+    int findKRotation(vector<int> &arr) {
+        // Code Here
+        int n = arr.size();
+        int smallest = arr[0];
+        int index = 0;
+        
+        for(int i = 0; i < n; i++){
+            if(arr[i] < smallest) {
+                smallest = arr[i];
+                index = i;
+            }
+        }
+        
+        return index;
+    }
+};
+
