@@ -57,3 +57,26 @@ class Solution {
         return false;
     }
 };
+
+//Q3 Given an array arr[] of integers, rearrange its elements in any order to maximize the value of:
+// Input: arr[] = [5, 3, 2, 4, 1]
+// Output: 40
+// Explanation: If we arrange the array as [1, 2, 3, 4, 5] then we can see that the minimum index will multiply with minimum number and maximum index will multiply with maximum number. So, 1*0 + 2*1 + 3*2 + 4*3 + 5*4 = 0+2+6+12+20 = 40 mod(109+7) = 40
+
+class Solution {
+  public:
+    int maxValue(vector<int> &arr) {
+        // code here
+        int n = arr.size();
+        long long sum = 0;
+        
+        sort(arr.begin(), arr.end());
+        
+        for(int i = 0; i < n; i++){
+            sum = sum + arr[i] * i;
+        }
+        
+        return sum;
+    }
+};
+
