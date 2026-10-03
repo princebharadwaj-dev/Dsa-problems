@@ -76,4 +76,19 @@ class Solution {
     }
 };
 
+// Q5 Given a string s, remove all the spaces from the string and return the modified string.
+// Input: s = "g eeks for ge eks"
+// Output: "geeksforgeeks"
+
+class Solution {
+  public:
+    string removeSpaces(string& s) {
+        // code here
+        s.erase(remove(s.begin(), s.end(), ' '), s.end());
+        
+        return s;
+    }
+};
+
+
 
