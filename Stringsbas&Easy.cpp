@@ -15,3 +15,21 @@ class Solution {
     }
 };
 
+// Q2 Given a string s, find if it is a palindrome. A string is considered a palindrome if it reads the same forwards and backwards.
+class Solution {
+  public:
+    string reverseString(string& s) {
+        // code here
+        int start = 0; int end = s.size() - 1;
+        
+        while(start < end) {
+            swap(s[start],s[end]);
+            start++;
+            end--;
+        }
+        
+        return s;
+    }
+};
+
+
