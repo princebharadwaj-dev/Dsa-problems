@@ -58,4 +58,22 @@ class Solution {
     }
 };
 
+// Q4 Given a string s consisting only of '0' and '1', find the last index at which '1' occurs. If '1' is not present in the string, return -1.
+class Solution {
+  public:
+    int lastIndex(string &s) {
+        // code here
+        int n = s.size();
+        int index = -1;
+        
+        for(int i = 0; i < n; i++){
+            if(s[i] == '1') {
+                index = i;
+            }
+        }
+        
+        return index;
+    }
+};
+
 
