@@ -30,6 +30,32 @@ class Solution {
         
         return s;
     }
+
+// Q3 Given two strings txt and pat, return the 0-based index of the first occurrence of the substring pat in txt. If pat is not found, return -1.
+
+class Solution {
+  public:
+    int firstOccurence(string& txt, string& pat) {
+
+        int n = txt.size();
+        int m = pat.size();
+
+        for (int i = 0; i <= n - m; i++) {
+            int j;
+
+            for (j = 0; j < m; j++) {
+                if (txt[i + j] != pat[j]) {
+                    break;
+                }
+            }
+
+            if (j == m) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 };
 
 
