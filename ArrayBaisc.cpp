@@ -101,5 +101,24 @@ class Solution {
     }
 };
 
+// Q5 Given an array arr[] of non-negative integers, move all the zeros to the end of the array while maintaining the relative order 
+//of the non-zero elements. Perform the operation in place, without using an extra array.
+
+class Solution {
+  public:
+    void pushZerosToEnd(vector<int>& arr) {
+        // code here
+        int n = arr.size();
+        int j = 0;
+        
+        for(int i = 0; i < n; i++) {
+            if(arr[i] != 0) {
+                swap(arr[i],arr[j]);
+                j++;
+            }
+        }
+    }
+};
+
 
 
