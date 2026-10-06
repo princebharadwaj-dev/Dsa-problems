@@ -100,3 +100,14 @@ class Solution {
     }
 };
 
+// Q5 Given a string consisting of lowercase letters, arrange all its letters in ascending order. 
+
+class Solution {
+  public:
+    string sortString(string s) {
+        sort(s.begin(), s.end());
+        return s;
+    }
+};
+
+
