@@ -95,3 +95,34 @@ public:
     }
 };
 
+// Q6 Given an array of non-negative integers. Your task is to rearrange the array elements alternatively i.e. first element should be 
+// the max value, the second should be the min value, the third should be the second max, the fourth should be the second min, and so on.
+// Input: arr[] = [1, 2, 3, 4, 5, 6]
+// Output: [6, 1, 5, 2, 4, 3]
+
+class Solution {
+  public:
+    void rearrange(vector<int>& arr) {
+        sort(arr.begin(), arr.end());
+
+        vector<int> ans;
+
+        int start = 0;
+        int end = arr.size() - 1;
+
+        while (start <= end) {
+            ans.push_back(arr[end]);
+            end--;
+
+            if (start <= end) {
+                ans.push_back(arr[start]);
+                start++;
+            }
+        }
+
+        for (int i = 0; i < arr.size(); i++) {
+            arr[i] = ans[i];
+        }
+    }
+};
+
