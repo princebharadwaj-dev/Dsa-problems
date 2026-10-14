@@ -90,5 +90,25 @@ class Solution {
     }
 };
 
+// Q6 Given a binary string s, count the number of substrings that start and end with 1.
+// Input: s = "1111"
+// Output: 6
+// Explanation: There are 6 substrings from the given string. They are "11", "11", "11", "111", "111", "1111".
+
+class Solution {
+  public:
+    int binarySubstring(string& s) {
+        int count = 0;
+
+        for(int i = 0; i < s.size(); i++) {
+            if(s[i] == '1') {
+                count++;
+            }
+        }
+
+        return count * (count - 1) / 2;
+    }
+};
+
 
 
